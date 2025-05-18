@@ -1,0 +1,63 @@
+@use "sass:color";
+
+// variables globales
+$primary-color: #4caf50;
+$secondary-color: #ff9800;
+
+// animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+// estilos base
+body {
+  background-color: #e5e7eb; // equivalente a bg-base-200
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// personalización de componentes
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: -10%);
+    border-color: color.adjust($primary-color, $lightness: -10%);
+  }
+}
+
+.card {
+  animation: fadeIn 0.3s ease-in;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+}
