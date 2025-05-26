@@ -80,7 +80,13 @@ export default function ProductDetails() {
                         )}
 
                         <button
-                            onClick={() => addToCart(plant)}
+                            onClick={() => {
+                                addToCart({
+                                    ...plant,
+                                    price: Math.floor(Math.random() * 100 + 20),
+                                    name: plant.common_name || 'Planta sin nombre'
+                                })
+                            }}
                             className="btn btn-primary mt-6"
                         >
                             Añadir al Carrito
